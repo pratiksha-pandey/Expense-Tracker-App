@@ -36,6 +36,22 @@ async function getTransactions() {
       });
     }
   }
+
+async function getAllTransactions() {
+    try {
+      const res = await axios.get('/api/v1/transactions');
+
+      dispatch({
+        type: 'GET_ALL_TRANSACTIONS',
+        payload: res.data.data
+      });
+    } catch (err) {
+      dispatch({
+        type: 'TRANSACTION_ERROR',
+        payload: err.response.data.error
+      });
+    }
+  }
   async function deleteTransaction(id) {
     try {
       await axios.delete(`/api/v1/transactions/${id}`);
@@ -79,6 +95,7 @@ async function getTransactions() {
     	error: state.error,
     	loading: state.loading,
 		getTransactions,
+    getAllTransactions,
 		deleteTransaction,
 		addTransaction
 

@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { Transaction } from './Transaction';
+
+import { GlobalContext } from '../context/GlobalState';
 
 export const CompleteHistory = () => {
+	const { transactions, getAllTransactions } = useContext(GlobalContext);
+
+  useEffect(() => {
+    getAllTransactions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 	return(
 		
-		<div>
-		<h2>
-			Complete History
-		</h2>
-		</div>
+		<>
+      <h3>Complete History</h3>
+      <ul className="list">
+        {transactions.map(transaction => (<Transaction key={transaction.id} transaction={transaction} />))}
+      </ul>
+      
+    </>
 		
 
 

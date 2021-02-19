@@ -14,23 +14,26 @@ import './App.css';
 function App() {
   return (
     <GlobalProvider>
-    <BrowserRouter>
-      <Header/>
-      
-      <div className="container">
-      
-        <Balance/>
-        <IncomeExpenses/>
-        <TransactionList/>
-        <History/>
-        <AddTransaction/>
-        
-      </div>
-      <Switch>
-        <Route path="/CompleteHistory" exact>
-        <CompleteHistory/>
-        </Route>
-      </Switch>
+      <BrowserRouter>
+        <Header />
+
+        <Switch>
+          <Route path="/" exact>
+            <div className="container">
+              <Balance />
+              <IncomeExpenses />
+              <TransactionList />
+              <History />
+              <AddTransaction />
+            </div>
+          </Route>
+
+          <Route path="/CompleteHistory" exact>
+           <div className="container">
+            <CompleteHistory />
+            </div>
+          </Route>
+        </Switch>
       </BrowserRouter>
     </GlobalProvider>
   );
