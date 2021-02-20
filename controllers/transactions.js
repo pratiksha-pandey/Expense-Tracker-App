@@ -2,7 +2,7 @@ const Transaction = require('../models/Transaction');
 
 exports.getTransactions = async (req, res, next) => {
   try {
-    const transactions = await Transaction.find({}).sort({_id:-1}).limit(5);
+    const transactions = await Transaction.find({}).sort({_id:-1});
 
     return res.status(200).json({
       success: true,

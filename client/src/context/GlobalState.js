@@ -39,7 +39,7 @@ async function getTransactions() {
 
 async function getAllTransactions() {
     try {
-      const res = await axios.get('/api/v1/transactions');
+      const res = await axios.get('/api/v1/transactions/all');
 
       dispatch({
         type: 'GET_ALL_TRANSACTIONS',
