@@ -16,3 +16,6 @@ Users can view their complete history of transactions
 
 ![2021-07-18 (31)](https://user-images.githubusercontent.com/65605807/126068239-49e2ea44-bf70-4354-bbd3-2dd950c7aa2c.png)
 
+
+Technologies used: React.js, Express.js, MongoDB
+
